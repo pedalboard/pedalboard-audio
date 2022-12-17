@@ -6,5 +6,11 @@ install:
 	systemctl daemon-reload
 	systemctl enable jackd
 	systemctl enable sushi
+
+restart:
 	systemctl restart jackd
 	systemctl restart sushi
+
+status:
+	systemctl status jackd
+	systemctl status sushi

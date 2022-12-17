@@ -1,0 +1,11 @@
+[Unit]
+Description=Jack audio server 
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+PrivateTmp=true
+Environment="JACK_NO_AUDIO_RESERVATION=1"
+ExecStart=/usr/bin/jackd -d alsa -d hw:CARD=XTONE,DEV=0 -p 64 -r 48000

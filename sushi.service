@@ -1,0 +1,11 @@
+[Unit]
+Description=Sushi DAW
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+Type=simple
+PrivateTmp=true
+Environment="LV_PATH=/usr/lib/lv2"
+ExecStart=/usr/local/bin/sushi -j -c /etc/sushi.json

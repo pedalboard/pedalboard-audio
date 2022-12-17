@@ -20,8 +20,8 @@
             ],
             "plugins" : [
                 {
-                    "uri" : "http://guitarix.sourceforge.net/plugins/gx_flanger#_flanger",
-                    "name" : "GxFuzz",
+                    "uri" : "http://lsp-plug.in/plugins/lv2/impulse_responses_mono",
+                    "name" : "IR",
                     "type" : "lv2"
                 }
             ]

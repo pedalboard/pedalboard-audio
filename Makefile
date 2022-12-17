@@ -14,3 +14,6 @@ restart:
 status:
 	systemctl status jackd
 	systemctl status sushi
+
+sushi-logs:
+	cat /var/log/sushi.log

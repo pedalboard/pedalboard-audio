@@ -20,7 +20,7 @@
             ],
             "plugins" : [
                 {
-                    "uri" : "http://lsp-plug.in/plugins/lv2/impulse_responses_mono",
+                    "uri" : "http://gareus.org/oss/lv2/zeroconvolv#CfgMono",
                     "name" : "IR",
                     "type" : "lv2"
                 }

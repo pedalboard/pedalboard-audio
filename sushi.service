@@ -8,8 +8,8 @@ WantedBy=multi-user.target
 [Service]
 Type=simple
 PrivateTmp=true
-Environment="LV2_PATH=/usr/local/lib/lv2"
-ExecStart=/usr/local/bin/sushi -j -c /etc/sushi.json -L /var/log/sushi.log --log-flush-interval=60
+Environment="LV2_PATH=/usr/lib/lv2:/usr/local/lib/lv2"
+ExecStart=/usr/local/bin/sushi -j -c /etc/sushi.json -L /var/log/sushi.log --log-level=debug --log-flush-interval=1
 ExecStartPost=/bin/sleep 2
 ExecStartPost=/usr/bin/jack_connect system:capture_1 sushi:audio_input_0
 ExecStartPost=/usr/bin/jack_connect system:playback_1 sushi:audio_output_0

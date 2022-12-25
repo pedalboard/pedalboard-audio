@@ -13,3 +13,4 @@ ExecStart=/usr/local/bin/sushi -j -c /etc/sushi.json -L /var/log/sushi.log --log
 ExecStartPost=/bin/sleep 5
 ExecStartPost=/usr/bin/jack_connect system:capture_1 sushi:audio_input_0
 ExecStartPost=/usr/bin/jack_connect system:playback_1 sushi:audio_output_0
+ExecStartPost=/usr/bin/aconnect 20:0 128:0

@@ -29,6 +29,25 @@
     ],
     "midi" : {
         "cc_mappings" : [
+            {
+                "port" : 0,
+                "channel" : 0,
+                "cc_number" : 4,
+                "plugin_name" : "main",
+                "parameter_name" : "gain",
+                "min_range" : 0.5,
+                "max_range" : 0.85
+            }
         ]
-    }
+    },
+    "events" : [
+    ],
+    "initial_state" : [
+            {
+            "processor" : "IR",
+            "program" : 0,
+            "parameters" : {
+            }
+        }
+    ]
 }

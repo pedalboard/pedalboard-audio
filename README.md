@@ -5,7 +5,7 @@
 * Waveshare [CM4 Nano A](https://www.waveshare.com/wiki/CM4-NANO-A) 
 * XSONIC XTONE Audio Interface
 
-## Configuration
+## Raspberry Pi OS configuration
 
 1. Disable Audio
 
@@ -22,4 +22,13 @@ diff /boot/config.txt /boot/config.txt.orig
 > dtoverlay=vc4-kms-v3d
 ```
 
+## Software build
+
+1. Elk Audio Sushi
+
+```
+cd
+sudo ./pedalboard-audio/sushi/install-deps.sh
+./pedalboard-audio/sushi/build.sh
+```
 

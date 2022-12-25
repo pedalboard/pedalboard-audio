@@ -11,7 +11,7 @@ Based on Raspberry Pi 4 using an XTONE audio interface
 
 diff /boot/config.txt /boot/config.txt.orig
 
-'''diff
+```diff
 53c53
 < dtparam=audio=off
 ---
@@ -20,5 +20,5 @@ diff /boot/config.txt /boot/config.txt.orig
 < dtoverlay=vc4-kms-v3d,noaudio
 ---
 > dtoverlay=vc4-kms-v3d
-'''
+```
 

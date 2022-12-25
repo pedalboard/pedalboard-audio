@@ -1,9 +1,9 @@
 # Pedalboard Audio Processor
 
-Based on Raspberry Pi 4 using an XTONE audio interface 
-
 ## Hardware 
 * Raspberry Pi Compute Module 4, 4 GB RAM, 32GB eMMC, Wireless
+* Waveshare [CM4 Nano A](https://www.waveshare.com/wiki/CM4-NANO-A) 
+* XSONIC XTONE Audio Interface
 
 ## Configuration
 
@@ -21,4 +21,5 @@ diff /boot/config.txt /boot/config.txt.orig
 ---
 > dtoverlay=vc4-kms-v3d
 ```
+
 

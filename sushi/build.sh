@@ -8,4 +8,9 @@ mkdir build
 cd build
 export VCPKG_FORCE_SYSTEM_BINARIES=true
 cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_TOOLCHAIN_FILE=../third-party/vcpkg/scripts/buildsystems/vcpkg.cmake ..
-make -j4
+cmake --build . --parallel 4
+
+echo To install run the following commands:
+echo
+echo sudo cmake --install .
+echo sudo ldconfig

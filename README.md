@@ -26,9 +26,17 @@ diff /boot/config.txt /boot/config.txt.orig
 
 1. Elk Audio Sushi
 
-```
+```bash
 cd
 sudo ./pedalboard-audio/sushi/install-deps.sh
 ./pedalboard-audio/sushi/build.sh
+```
+
+2. LV2 plugins
+
+```bash
+cd
+sudo ./pedalboard-audio/zconvo.lv/install-deps.sh
+./pedalboard-audio/zconvo.lv/build.sh
 ```
 

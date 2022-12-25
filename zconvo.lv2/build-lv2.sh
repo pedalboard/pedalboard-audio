@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p dev/gh
-cd dev/gh
 git clone https://github.com/laenzlinger/zconvo.lv2
+cd zconvo.lv2
+git checkout experiments
 make
 

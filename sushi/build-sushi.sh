@@ -1,9 +1,7 @@
 #!/bin/bash
 
-mkdir -p dev/gh
-cd dev/gh
 git clone https://github.com/elk-audio/sushi.git --recursive
-cd sushi/
+cd sushi
 ./third-party/vcpkg/bootstrap-vcpkg.sh
 mkdir build 
 cd build

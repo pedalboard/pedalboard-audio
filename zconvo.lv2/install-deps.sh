@@ -1,8 +1,5 @@
 #!/bin/bash
 
-apt-get install libfftw3-dev
-apt-get install libsamplerate
-apt-get install libsamplerate-dev
-apt-get install libsndfile-dev
+apt-get install -y libfftw3-dev libsamplerate-dev libsndfile1-dev
 
 

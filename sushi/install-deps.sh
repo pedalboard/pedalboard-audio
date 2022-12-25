@@ -6,11 +6,11 @@ apt-get install -y build-essential snapd git jackd2 libasound2-dev libjack-jackd
 snap install core
 snap install cmake --classic
 
+# for RPI with less memory increase swap
 
-dphys-swapfile swapoff
-vi /etc/dphys-swapfile
-dphys-swapfile setup
-dphys-swapfile swapon
-
-reboot
+#dphys-swapfile swapoff
+#vi /etc/dphys-swapfile
+#dphys-swapfile setup
+#dphys-swapfile swapon
+#reboot
 

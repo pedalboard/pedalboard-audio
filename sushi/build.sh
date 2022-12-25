@@ -12,5 +12,5 @@ cmake --build . --parallel 4
 
 echo To install run the following commands:
 echo
-echo sudo cmake --install .
+echo sudo /snap/bin/cmake --install
 echo sudo ldconfig

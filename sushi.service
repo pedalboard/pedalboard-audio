@@ -12,5 +12,7 @@ Environment="LV2_PATH=/usr/lib/lv2:/usr/local/lib/lv2"
 ExecStart=/usr/local/bin/sushi -j -c /etc/sushi.json -L /var/log/sushi.log --log-level=debug --log-flush-interval=1
 ExecStartPost=/bin/sleep 5
 ExecStartPost=/usr/bin/jack_connect system:capture_1 sushi:audio_input_0
+ExecStartPost=/usr/bin/jack_connect system:capture_2 sushi:audio_input_1
 ExecStartPost=/usr/bin/jack_connect system:playback_1 sushi:audio_output_0
+ExecStartPost=/usr/bin/jack_connect system:playback_2 sushi:audio_output_1
 ExecStartPost=/usr/bin/aconnect 20:0 128:0

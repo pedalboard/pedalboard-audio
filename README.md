@@ -22,6 +22,10 @@ diff /boot/config.txt /boot/config.txt.orig
 > dtoverlay=vc4-kms-v3d
 ```
 
+2. Make it read-only
+
+https://learn.adafruit.com/read-only-raspberry-pi/ 
+
 ## Software build
 
 1. Elk Audio Sushi

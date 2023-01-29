@@ -44,3 +44,9 @@ sudo ./pedalboard-audio/zconvo.lv/install-deps.sh
 ./pedalboard-audio/zconvo.lv/build.sh
 ```
 
+## Backup on OSX
+
+1. run [usbbot](https://github.com/raspberrypi/usbboot)
+2. find disk `diskutil list`
+3. copy `sudo dd if=/dev/diskX of=backup/pedalboard-audio-20230129.dmg`
+4. shrink the image with [pyshrink](https://github.com/lisanet/PiShrink-macOS)

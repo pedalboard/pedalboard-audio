@@ -50,3 +50,30 @@ sudo ./pedalboard-audio/zconvo.lv/install-deps.sh
 2. find disk `diskutil list`
 3. copy `sudo dd if=/dev/diskX of=backup/pedalboard-audio-20230129.dmg`
 4. shrink the image with [pyshrink](https://github.com/lisanet/PiShrink-macOS)
+
+## Read only and overlayfs
+
+see also https://learn.adafruit.com/read-only-raspberry-pi/
+
+### Restore Read/Write access for rootfs
+
+```bash
+sudo mount -o remount,rw /boot
+```
+
+### Enable/Disable overlayfs
+
+```bash
+sudo raspi-config nonint enable_overlayfs
+sudo raspi-config nonint disable_overlayfs
+```
+
+## Snapd
+
+Snapd is installed for `nvim` and `cmake` but it is disabled.
+
+To start it:
+
+```bash
+sudo systemctl disable snapd.service
+```

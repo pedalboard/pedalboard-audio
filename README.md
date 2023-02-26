@@ -64,8 +64,9 @@ sudo mount -o remount,rw /boot
 ### Enable/Disable overlayfs
 
 ```bash
-sudo raspi-config nonint enable_overlayfs
-sudo raspi-config nonint disable_overlayfs
+make enable-ro
+# or
+make disable-ro
 ```
 
 ## Snapd

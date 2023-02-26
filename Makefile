@@ -29,6 +29,11 @@ status: ## show the service status
 sushi-logs: ## show log files
 	tail -n 100 -f /var/log/sushi.log
 
+enable-ro: ## enable overlay fs
+	sudo raspi-config nonint enable_overlayfs
+
+disable-ro: ## enable overlay fs
+	sudo raspi-config nonint disable_overlayfs
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

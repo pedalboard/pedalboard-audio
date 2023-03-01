@@ -3,7 +3,7 @@
 ## Hardware 
 * Raspberry Pi Compute Module 4, 4 GB RAM, 32GB eMMC, Wireless
 * Waveshare [CM4 Nano A](https://www.waveshare.com/wiki/CM4-NANO-A) 
-* XSONIC XTONE Audio Interface
+* [HiFiBerry DAC+ADC](https://www.hifiberry.com/shop/boards/hifiberry-dac-adc-pro/)
 
 ## Raspberry Pi OS configuration
 

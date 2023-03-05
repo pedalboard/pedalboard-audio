@@ -5,20 +5,25 @@
     "tracks" : [
         {
             "name" : "main",
-            "channels" : 2,
+            "mode" : "stereo",
             "inputs" : [
                 {
-                    "engine_channel" : 0,
-                    "track_channel" : 0
+                    "engine_bus" : 0,
+                    "track_bus" : 0
                 }
             ],
             "outputs" : [
                 {
-                    "engine_channel" : 1,
-                    "track_channel" : 0
+                    "engine_bus" : 0,
+                    "track_bus" : 0
                 }
             ],
             "plugins" : [
+                {
+                    "uid" : "sushi.testing.passthrough",
+                    "name" : "passthrough",
+                    "type" : "internal"
+                }
            ]
         }
     ],

@@ -1,47 +1,64 @@
 # Pedalboard Audio Processor
 
-## Hardware 
+## Hardware
 * Raspberry Pi Compute Module 4, 4 GB RAM, 32GB eMMC, Wireless
-* Waveshare [CM4 Nano A](https://www.waveshare.com/wiki/CM4-NANO-A) 
+* Waveshare [CM4 Nano A](https://www.waveshare.com/wiki/CM4-NANO-A)
 * [HiFiBerry DAC+ADC](https://www.hifiberry.com/shop/boards/hifiberry-dac-adc-pro/)
 
-## Raspberry Pi OS configuration
+##  Elk Audio OS
 
-1. Disable Audio
+The system is based on [Elk Dev Kit](https://elk-audio.github.io/elk-docs/html/index.html).
 
-diff /boot/config.txt /boot/config.txt.orig
+Since the open source version is only supported on Raspberry PI 4 (not the compute module),
+some changes are requried and a custom Elk OS version (based v0.11.0) has to be build.
+
+
+1. Upgrade the RPI firmware
+
+The RPI firmware is not compatible with the CM4. Therfore it has to be updated:
 
 ```diff
-53c53
-< dtparam=audio=off
----
-> dtparam=audio=on
-62c62
-< dtoverlay=vc4-kms-v3d,noaudio
----
-> dtoverlay=vc4-kms-v3d
+--- a/recipes-bsp/common/raspberrypi-firmware.inc
++++ b/recipes-bsp/common/raspberrypi-firmware.inc
+@@ -1,9 +1,9 @@
+-RPIFW_DATE ?= "20210421"
+-SRCREV ?= "2ac4de4eaac5c1d1b25acec4a5e0a9fdb16f0c91"
++RPIFW_DATE ?= "20230106"
++SRCREV ?= "78852e166b4cf3ebb31d051e996d54792f0994b0"
+ RPIFW_SRC_URI ?= "https://github.com/raspberrypi/firmware/archive/${SRCREV}.tar.gz;downloadfilename=raspberrypi-firmware-${SRCREV}.tar.gz"
+ RPIFW_S ?= "${WORKDIR}/firmware-${SRCREV}"
+
+ SRC_URI = "${RPIFW_SRC_URI}"
+-SRC_URI[sha256sum] = "c687aa1b5127a8dc0773e8aefb1f009f24bf71ccb4c9e8b40a1d46cbbb7bee0c"
++SRC_URI[sha256sum] = "d71b4a941b297b1327564dd22a9bf70bee885a38e206c54cebec91b4824e21d8"
 ```
 
-2. Make it read-only
+1. Include the CM4 device tree
 
-https://learn.adafruit.com/read-only-raspberry-pi/ 
+The local.conf file of the Yocto build has to be adapted:
 
-## Software build
-
-1. Elk Audio Sushi
-
-```bash
-cd
-sudo ./pedalboard-audio/sushi/install-deps.sh
-./pedalboard-audio/sushi/build.sh
+```
+RPI_KERNEL_DEVICETREE_remove = "broadcom/bcm2711-rpi-400.dtb broadcom/bcm2711-rpi-cm4.dtb"
 ```
 
-2. LV2 plugins
+Remove broadcom/bcm2711-rpi-cm4.dtb
+
+1. Enable USB host
+
+On the compute module USB host is disabled by default.
+
+Add the following line to config.txt to enable it.
+
+```
+dtoverlay=dwc2,dr_mode=host
+```
+
+## Enable/Disable overlayfs
 
 ```bash
-cd
-sudo ./pedalboard-audio/zconvo.lv/install-deps.sh
-./pedalboard-audio/zconvo.lv/build.sh
+make enable-ro
+# or
+make disable-ro
 ```
 
 ## Backup on OSX
@@ -51,30 +68,4 @@ sudo ./pedalboard-audio/zconvo.lv/install-deps.sh
 3. copy `sudo dd if=/dev/diskX of=backup/pedalboard-audio-20230129.dmg`
 4. shrink the image with [pyshrink](https://github.com/lisanet/PiShrink-macOS)
 
-## Read only and overlayfs
 
-see also https://learn.adafruit.com/read-only-raspberry-pi/
-
-### Restore Read/Write access for rootfs
-
-```bash
-sudo mount -o remount,rw /boot
-```
-
-### Enable/Disable overlayfs
-
-```bash
-make enable-ro
-# or
-make disable-ro
-```
-
-## Snapd
-
-Snapd is installed for `nvim` and `cmake` but it is disabled.
-
-To start it:
-
-```bash
-sudo systemctl disable snapd.service
-```

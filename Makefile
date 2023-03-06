@@ -21,7 +21,7 @@ start: ## start the services
 status: ## show the service status
 	systemctl status sushi
 
-sushi: ## show log files
+logs: ## show log files
 	tail -n 100 -f /tmp/sushi.log
 
 enable-ro: ## enable overlay fs

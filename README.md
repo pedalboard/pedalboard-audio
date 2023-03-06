@@ -53,7 +53,7 @@ Add the following line to config.txt to enable it.
 dtoverlay=dwc2,dr_mode=host
 ```
 
-## Enable/Disable overlayfs
+## Enable/Disable Readonly Filesystem
 
 ```bash
 make enable-ro

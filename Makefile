@@ -1,11 +1,13 @@
-.PHONY: help install restart stop start status sushi-logs
+.PHONY: help install restart stop start status logs
 
 .DEFAULT_GOAL := help
 
 install: ## install the services into the local system
+	$(MAKE) disable-ro
 	sudo cp sushi.service /lib/systemd/system/
 	sudo systemctl daemon-reload
 	sudo systemctl enable sushi
+	$(MAKE) enable-ro
 
 restart: ## restart the services
 	sudo systemctl restart sushi
@@ -19,7 +21,7 @@ start: ## start the services
 status: ## show the service status
 	systemctl status sushi
 
-sushi-logs: ## show log files
+sushi: ## show log files
 	tail -n 100 -f /tmp/sushi.log
 
 enable-ro: ## enable overlay fs

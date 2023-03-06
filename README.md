@@ -4,7 +4,7 @@
 
 ### Pedalboard OS
 
-See [Pedalbaord OS](../pedalboard-os)
+See [Pedalbaord OS](https://github.com/pedalbaord/pedalboard-os)
 
 ### Sushi (Digital Audio Processing Engine)
 

@@ -8,7 +8,7 @@ See [Pedalbaord OS](https://github.com/pedalboard/pedalboard-os)
 
 ### Sushi (Digital Audio Processing Engine)
 
-This repo contains the sush configuration for [sushi](https://elk-audio.github.io/elk-docs/html/documents/sushi_overview.html).
+This repo contains the configuration for [sushi](https://elk-audio.github.io/elk-docs/html/documents/sushi_overview.html).
 
 ## Enable/Disable Readonly Filesystem
 

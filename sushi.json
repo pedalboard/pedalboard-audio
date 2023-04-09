@@ -23,7 +23,12 @@
                     "uid" : "sushi.testing.passthrough",
                     "name" : "passthrough",
                     "type" : "internal"
-                }
+                 },
+                 {
+                    "uri" : "https://github.com/pedalboard/db-meter.lv2",
+                    "name" : "db-meter",
+                    "type" : "lv2"
+                 }
            ]
         }
     ],

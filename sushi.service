@@ -7,6 +7,7 @@ ConditionPathExists=/dev/rtdm/audio_rtdm
 Type=simple
 RemainAfterExit=yes
 WorkingDirectory=/udata/
+Environment=LV2_PATH=/home/mind/plugins/mda-lv2/:/udata/plugins/lv2:/usr/lib/lv2
 Environment=LD_LIBRARY_PATH=/usr/xenomai/lib
 ExecStart=/usr/bin/sushi --multicore-processing=2 -r -c /udata/pedalboard-audio/sushi.json
 User=mind

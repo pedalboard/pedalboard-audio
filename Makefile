@@ -2,7 +2,7 @@
 
 .DEFAULT_GOAL := help
 
-LV2_DIR = /udata/plugins/lv2 
+LV2_DIR = /udata/plugins/lv2
 METER_PLUGIN = db-meter.lv2
 
 

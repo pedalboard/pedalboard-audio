@@ -2,6 +2,15 @@
 
 .DEFAULT_GOAL := help
 
+LV2_DIR = /udata/plugins/lv2 
+METER_PLUGIN = db-meter.lv2
+
+
+install-plugins:
+	curl https://github.com/pedalboard/$(METER_PLUGIN)/releases/latest/download/$(METER_PLUGIN).tgz -O $(LV2_DIR)/$(METER_PLUGIN).tgz 
+	tar -C $(LV2_DIR) -xvf $(METER_PLUGIN).tgz
+	rm $(LV2_DIR)/$(METER_PLUGIN).tgz
+
 install: ## install the services into the local system
 	$(MAKE) disable-ro
 	sudo cp sushi.service /lib/systemd/system/

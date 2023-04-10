@@ -7,6 +7,7 @@ METER_PLUGIN = db-meter.lv2
 
 
 install-plugins: ## install required sound plugins
+	mkdir -p $(LV2_DIR)
 	rm -f $(LV2_DIR)/$(METER_PLUGIN).tgz
 	curl -L -o $(LV2_DIR)/$(METER_PLUGIN).tgz https://github.com/pedalboard/$(METER_PLUGIN)/releases/latest/download/$(METER_PLUGIN).tgz  
 	cd $(LV2_DIR) && tar -xzvf $(METER_PLUGIN).tgz

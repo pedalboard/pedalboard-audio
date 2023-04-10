@@ -52,6 +52,9 @@
             }
         ]
     },
+    "osc" : {
+        "enable_all_processor_outputs": true
+    },
     "events" : [
     ],
     "initial_state" : [

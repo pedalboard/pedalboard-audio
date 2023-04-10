@@ -7,7 +7,7 @@ METER_PLUGIN = db-meter.lv2
 
 
 install-plugins:
-	curl https://github.com/pedalboard/$(METER_PLUGIN)/releases/latest/download/$(METER_PLUGIN).tgz -O $(LV2_DIR)/$(METER_PLUGIN).tgz 
+	curl -O $(LV2_DIR)/$(METER_PLUGIN).tgz https://github.com/pedalboard/$(METER_PLUGIN)/releases/latest/download/$(METER_PLUGIN).tgz  
 	tar -C $(LV2_DIR) -xvf $(METER_PLUGIN).tgz
 	rm $(LV2_DIR)/$(METER_PLUGIN).tgz
 

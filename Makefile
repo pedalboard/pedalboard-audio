@@ -3,7 +3,7 @@
 .DEFAULT_GOAL := help
 
 LV2_DIR = /udata/plugins/lv2
-METER_PLUGIN = db-meter.lv2
+METER_PLUGIN = loudness-meter.lv2
 
 
 install-plugins: ## install required sound plugins

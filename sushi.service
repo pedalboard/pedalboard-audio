@@ -1,14 +1,16 @@
 [Unit]
 Description=Sushi DAW
 After=load-drivers.service
-ConditionPathExists=/dev/rtdm/audio_rtdm
+ConditionPathExists=/dev/audio_evl
 
 [Service]
 Type=simple
 RemainAfterExit=yes
+LimitRTPRIO=infinity
+LimitMEMLOCK=infinity
+LimitSTACK=infinity
 WorkingDirectory=/udata/
-Environment=LV2_PATH=/home/mind/plugins/mda-lv2/:/udata/plugins/lv2:/usr/lib/lv2
-Environment=LD_LIBRARY_PATH=/usr/xenomai/lib
+Environment=LV2_PATH=/udata/plugins/lv2:/usr/lib/lv2
 ExecStart=/usr/bin/sushi --multicore-processing=2 -r -c /udata/pedalboard-audio/sushi.json -l info --log-flush-interval=60
 User=mind
 ExecStartPost=/bin/sleep 3

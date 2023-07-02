@@ -12,8 +12,8 @@ while [ $? -ne 0 ]; do
     aconnect "pedalboard-midi" "Sushi"
 done
 
-aconnect "Sushi" "pedalboard-midi"
+aconnect "Sushi:1" "pedalboard-midi"
 while [ $? -ne 0 ]; do
     sleep 0.5
-    aconnect "Sushi" "pedalboard-midi"
+    aconnect "Sushi:1" "pedalboard-midi"
 done

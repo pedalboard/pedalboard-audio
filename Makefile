@@ -24,15 +24,19 @@ install: ## install the services into the local system
 
 restart: ## restart the services
 	sudo systemctl restart sushi
+	sudo systemctl restart midi-connections
 
 stop: ## stop the services
 	sudo systemctl stop sushi
+	sudo systemctl stop midi-connections
 
 start: ## start the services
 	sudo systemctl start sushi
+	sudo systemctl start midi-connections
 
 status: ## show the service status
 	systemctl status sushi
+	systemctl status midi-connections
 
 logs: ## show log files
 	tail -n 100 -f /tmp/sushi.log

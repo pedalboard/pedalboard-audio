@@ -23,8 +23,9 @@ install: ## install the services into the local system
 	$(MAKE) enable-ro
 
 restart: ## restart the services
+	sudo systemctl stop midi-connections
 	sudo systemctl restart sushi
-	sudo systemctl restart midi-connections
+	sudo systemctl start midi-connections
 
 stop: ## stop the services
 	sudo systemctl stop sushi

@@ -16,8 +16,10 @@ install-plugins: ## install required sound plugins
 install: ## install the services into the local system
 	$(MAKE) disable-ro
 	sudo cp sushi.service /lib/systemd/system/
+	sudo cp connect-midi-apps /usr/bin/
 	sudo systemctl daemon-reload
 	sudo systemctl enable sushi
+	sudo systemctl enable midi-connections
 	$(MAKE) enable-ro
 
 restart: ## restart the services

@@ -20,8 +20,8 @@
             ],
             "plugins" : [
                 {
-                    "uid" : "sushi.testing.passthrough",
-                    "name" : "passthrough",
+                    "uid" : "sushi.testing.gain",
+                    "name" : "gain",
                     "type" : "internal"
                  },
                  {

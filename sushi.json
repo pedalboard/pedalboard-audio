@@ -38,7 +38,7 @@
                 "port" : 0,
                 "channel" : 2,
                 "cc_number" : 7,
-                "plugin_name" : "main",
+                "plugin_name" : "gain",
                 "parameter_name" : "gain",
                 "min_range" : 0.6,
                 "max_range" : 0.87

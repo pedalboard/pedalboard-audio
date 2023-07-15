@@ -36,8 +36,8 @@ start: ## start the services
 	sudo systemctl start midi-connections
 
 status: ## show the service status
-	-systemctl status midi-connections
-	-systemctl status sushi
+	@-systemctl status midi-connections
+	@-systemctl status sushi
 
 logs: ## show log files
 	tail -n 100 -f /tmp/sushi.log

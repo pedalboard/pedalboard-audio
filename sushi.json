@@ -42,7 +42,7 @@
             {
                 "port" : 0,
                 "channel" : 2,
-                "cc_number" : 7,
+                "cc_number" : 100,
                 "plugin_name" : "gain",
                 "parameter_name" : "gain",
                 "min_range" : 0.6,

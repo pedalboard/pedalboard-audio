@@ -19,7 +19,12 @@
                 }
             ],
             "plugins" : [
-                {
+                 {
+                    "uri" : "https://github.com/michaelwillis/dragonfly-reverb",
+                    "name" : "dragonfly-reverb",
+                    "type" : "lv2"
+                 },
+                 {
                     "uid" : "sushi.testing.gain",
                     "name" : "gain",
                     "type" : "internal"
@@ -28,8 +33,8 @@
                     "uri" : "https://github.com/pedalboard/loudness-meter.lv2",
                     "name" : "loudness-meter",
                     "type" : "lv2"
-                 }
-           ]
+                 }        
+            ]
         }
     ],
     "midi" : {

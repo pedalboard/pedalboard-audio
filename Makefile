@@ -4,6 +4,7 @@
 
 LV2_DIR = /udata/plugins/lv2
 METER_PLUGIN = loudness-meter.lv2
+REVERB_PLUGIN = DragonflyHallReverb.lv2
 
 
 install-plugins: ## install required sound plugins
@@ -12,6 +13,11 @@ install-plugins: ## install required sound plugins
 	curl -L -o $(LV2_DIR)/$(METER_PLUGIN).tgz https://github.com/pedalboard/$(METER_PLUGIN)/releases/latest/download/$(METER_PLUGIN).tgz  
 	cd $(LV2_DIR) && tar -xzvf $(METER_PLUGIN).tgz
 	rm $(LV2_DIR)/$(METER_PLUGIN).tgz
+	rm -f $(LV2_DIR)/$(REVERB_PLUGIN).tgz
+	curl -L -o $(LV2_DIR)/$(REVERB_PLUGIN).tgz https://github.com/pedalboard/dragonfly-reverb/releases/latest/download/$(REVERB_PLUGIN).tgz  
+	cd $(LV2_DIR) && tar -xzvf $(REVERB_PLUGIN).tgz
+	rm $(LV2_DIR)/$(REVERB_PLUGIN).tgz
+
 
 install: ## install the services into the local system
 	$(MAKE) disable-ro
